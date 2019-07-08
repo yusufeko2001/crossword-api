@@ -26,7 +26,9 @@ Route.group(()=>{
   Route.post('users','UserController.store')
   Route.put('users/:id', 'UserController.update').middleware(['auth:jwt'])
   Route.delete('users/:id', 'UserController.delete').middleware(['auth:jwt'])
-}).prefix('api/')
+
+  Route.get('crosswords/:id', 'CrosswordController.show').middleware(['auth:jwt'])
+}).prefix('api/v1')
 
 
 Route.group(() => {
