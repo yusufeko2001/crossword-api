@@ -35,7 +35,7 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
   crosswords () {
-    return this.belongsToMany('App/Models/Crossword').pivotTable('users_crosswords')
+    return this.belongsToMany('App/Models/Crossword').pivotTable('users_crosswords').withPivot(['is_finished'])
   }
 }
 
